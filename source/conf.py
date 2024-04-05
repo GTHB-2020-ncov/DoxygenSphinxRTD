@@ -25,7 +25,7 @@ release = '0.0.1'
 
     
 extensions = [
-    'myst_parser',
+    "myst_parser",
     "sphinxcontrib.mermaid",
     "sphinx_copybutton",
 ]
