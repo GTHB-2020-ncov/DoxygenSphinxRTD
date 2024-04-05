@@ -1,3 +1,4 @@
 tqdm
 rapidocr_onnxruntime
 loguru
+myst_parser
