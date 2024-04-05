@@ -2,3 +2,5 @@ tqdm
 rapidocr_onnxruntime
 loguru
 myst_parser
+sphinxcontrib.mermaid
+sphinx_copybutton
