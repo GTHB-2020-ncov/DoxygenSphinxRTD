@@ -4,3 +4,4 @@ loguru
 myst_parser
 sphinxcontrib.mermaid
 sphinx_copybutton
+sphinx_rtd_theme
