@@ -9,7 +9,7 @@ on:
       - 'README.md'
 
 env:
-  REPO_SSH: git@github.com:SWHL/RapidVideOCR.git
+  REPO_SSH: https://github.com/GTHB-2020-ncov/DoxygenSphinxRTD.git
   CLONE_URL: ${{ github.event.repository.clone_url }}
   USER_NAME: ${{ github.event.repository.owner.name }}
   USER_EMAIL: ${{ github.event.repository.owner.email }}
@@ -23,22 +23,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Python 3.7
+      - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.7'
+          python-version: '3.11'
           architecture: 'x64'
 
-      - name: Set SSH Environment
-        env:
-          DEPLOY_KEYS: ${{ secrets.DEPLOY_KEYS }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$DEPLOY_KEYS" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
-          git config --global user.name $USER_NAME
-          git config --global user.email $USER_EMAIL
+      # - name: Set SSH Environment
+      #   env:
+      #     DEPLOY_KEYS: ${{ secrets.DEPLOY_KEYS }}
+      #   run: |
+      #     mkdir -p ~/.ssh/
+      #     echo "$DEPLOY_KEYS" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
+      #     git config --global user.name $USER_NAME
+      #     git config --global user.email $USER_EMAIL
 
       - name: Summit repo to docs branch.
         run: |
